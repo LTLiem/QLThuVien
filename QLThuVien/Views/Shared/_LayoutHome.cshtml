@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutBody.cshtml";
+}
+
+			<!-- Menu -->
+			<div id="menu">
+			
+				<!-- ENDS menu-holder -->
+				<div id="menu-holder">
+					<!-- wrapper-menu -->
+					<div class="wrapper">
+						<!-- Navigation -->
+						<ul class="sf-menu" id="nav" name="nav">
+							<li><a href="/home/index">Trang chủ</a></li>
+                            <li><a href="#">Tin tức</a></li>
+							<li><a href="#">Giới thiệu<span class="subheader">Thông tin thư viện</span></a>
+								<ul>									
+									<li><a href="/NVLuuHanh/NVLuuHanhHome"><span> Thông tin A</span></a></li>
+									<li><a href="#"><span> Thông tin B</span></a></li>									
+								</ul>
+							</li>
+							<li><a href="#">OPAC<span class="subheader">Tra cứu OPAC</span></a></li>
+                            <li><a href="#">Đăng ký<span class="subheader">Lớp tập huấn</span></a></li>									
+						</ul>
+						<!-- Navigation -->
+					</div>
+					<!-- wrapper-menu -->
+				</div>
+				<!-- ENDS menu-holder -->
+			</div>
+			<!-- ENDS Menu -->
+			
+
+            @RenderBody()
