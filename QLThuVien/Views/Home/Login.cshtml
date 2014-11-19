@@ -28,12 +28,12 @@
                 <table>
                     <tr>                       
                         <td>@Html.Label("Tên đăng nhập")</td>
-                        <td>@Html.TextBoxFor(a => a.tenDangNhap)</td>
+                        <td>@Html.TextBoxFor(a => a.tenDangNhap, new {@value = ""})</td>
                         <td>@Html.ValidationMessageFor(a => a.tenDangNhap)</td>                 
                     </tr>
                     <tr>
                         <td>@Html.Label("Mật khẩu")</td>
-                        <td>@Html.PasswordFor(a => a.matKhau)</td>
+                        <td>@Html.PasswordFor(a => a.matKhau, new { @value = "" })</td>
                         <td>@Html.ValidationMessageFor(a => a.matKhau)</td>
                     </tr> 
                     <tr>

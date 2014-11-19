@@ -43,6 +43,7 @@ namespace QLThuVien.Controllers
                         Session["Username"] = v.tenDangNhap.ToString();
                         Session["Password "] = v.matKhau.ToString();
 
+                        //ViewBag.LoginNotes ="<p>Để sử dụng chức năng của thư viện, vui lòng <a href=\"/Home/Login\">đăng nhập</a></p>"; 
                         MaLoaiNhanVien = Convert.ToInt32(v.LoaiNhanVien);
                         TenLoaiNhanVien = TE.loainhanvien.Where(i => i.id == MaLoaiNhanVien).FirstOrDefault().TenLoai;
 
@@ -79,5 +80,10 @@ namespace QLThuVien.Controllers
             }
         }
 
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index");
+        }
     }
 }

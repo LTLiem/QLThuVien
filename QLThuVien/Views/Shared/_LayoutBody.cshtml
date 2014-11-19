@@ -1,5 +1,15 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutHead.cshtml";
+    if (Session["Username"] == null)
+    {
+        ViewBag.User = "Khách";
+        ViewBag.LoginNotes = "<p>Để sử dụng chức năng của thư viện, vui lòng <a href=\"/Home/Login\">đăng nhập</a></p>";
+    }
+    else
+    {
+        ViewBag.User = Session["Username"];
+        ViewBag.LoginNotes = "<a href=\"/Home/Logout\">Logout</a>";
+    }
 }
 
 <body class="home">
@@ -12,8 +22,8 @@
             <!-- INFO -->
             <div class="infoUser">
                 <div>
-                    <p>Xin chào, Khách</p>
-                    <p>Để sử dụng chức năng của thư viện, vui lòng <a href="/Home/Login">đăng nhập</a></p>
+                    <p>Xin chào, @ViewBag.User</p>
+                    @Html.Raw(ViewBag.LoginNotes)
                 </div>
             </div>
             <!-- ENDS INFO -->
