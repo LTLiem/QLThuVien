@@ -1,0 +1,51 @@
+﻿@model QLThuVien.Models.nhanvien
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<!-- MAIN -->
+<div id="main">
+    <!-- wrapper-main -->
+    <div class="wrapper">
+
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+                    //This is for create from tag
+            @Html.AntiForgeryToken() //This is for prevent CSRF attack
+                                            @Html.ValidationSummary(true)
+                if (ViewBag.Message != null)
+                {
+                    <br />
+                    <div style="border:1px solid red; color:Highlight; width:70%; height:40px">
+                        @ViewBag.Message
+                    </div>
+                    <br />
+                }
+            <!-- content -->
+            <div id="content"> 
+                <table>
+                    <tr>                       
+                        <td>@Html.Label("Tên đăng nhập")</td>
+                        <td>@Html.TextBoxFor(a => a.tenDangNhap, new {@value = ""})</td>
+                        <td>@Html.ValidationMessageFor(a => a.tenDangNhap)</td>                 
+                    </tr>
+                    <tr>
+                        <td>@Html.Label("Mật khẩu")</td>
+                        <td>@Html.PasswordFor(a => a.matKhau, new { @value = "" })</td>
+                        <td>@Html.ValidationMessageFor(a => a.matKhau)</td>
+                    </tr> 
+                    <tr>
+                        <td>
+                            <input style="width:80px;margin:0 auto;" type="submit" value="Login" />
+                        </td>
+                    </tr>                        
+                </table>
+            </div>
+        <!-- ENDS content -->
+    }
+    </div>
+    <!-- ENDS wrapper-main -->
+</div>
+<!-- ENDS MAIN -->
