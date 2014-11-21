@@ -6,15 +6,16 @@ using System.Web.Mvc;
 
 namespace QLThuVien.Controllers
 {
-    public class NVLuuHanhController : Controller
+    public class LuuHanhController : Controller
     {
         //
-        // GET: /NVLuuHanh/
+        // GET: /LuuHanh/
 
-        public ActionResult NVLuuHanhHome()
+        public ActionResult LuuHanhHome()
         {
             return View();
         }
+
 
     }
 }

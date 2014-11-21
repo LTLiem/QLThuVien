@@ -28,8 +28,8 @@
 }
 /* LOGIN ------------------------------------------------------------*/
 #login {
-	width: 300px;
-	margin: 100px auto;
+	width: 400px;
+    margin: 100px auto;
 }
 
 #login div {
@@ -39,7 +39,7 @@
 }
 
 #login label {
-	width: 100px;
+	width: 150px;
 	display: block;
 	float: left;
 	clear: left;

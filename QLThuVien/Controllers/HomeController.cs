@@ -28,7 +28,8 @@ namespace QLThuVien.Controllers
         {
             int MaLoaiNhanVien = 0;
             string TenLoaiNhanVien = "";
-            string redirectPage = "";
+            string redirectView = "";
+            string redirectController = "";
 
             if (ModelState.IsValid)
             {
@@ -43,23 +44,21 @@ namespace QLThuVien.Controllers
                         Session["Username"] = v.tenDangNhap.ToString();
                         Session["Password "] = v.matKhau.ToString();
 
-                        //ViewBag.LoginNotes ="<p>Để sử dụng chức năng của thư viện, vui lòng <a href=\"/Home/Login\">đăng nhập</a></p>"; 
                         MaLoaiNhanVien = Convert.ToInt32(v.LoaiNhanVien);
                         TenLoaiNhanVien = TE.loainhanvien.Where(i => i.id == MaLoaiNhanVien).FirstOrDefault().TenLoai;
 
                         switch (TenLoaiNhanVien)
                         {
-                            case "Bien muc" :
-                                redirectPage = "BienMucHome";
-                                break;
                             case "Luu hanh":
-                                redirectPage = "LuuHanhHome";
+                                redirectView = "LuuHanhHome";
+                                redirectController = "LuuHanh";
                                 break;
                             case "QLDG":
-                                redirectPage = "QLDocGiaHome";
+                                redirectView = "QLDocGiaHome";
+                                redirectController = "QLDocGia";
                                 break;
                         }
-                        return RedirectToAction(redirectPage);
+                        return RedirectToAction(redirectView,redirectController);
                     }
                     ViewBag.Message = "Mật khẩu hoặc tên đăng nhập không hợp lệ.";
                     return View(nv);
@@ -68,22 +67,10 @@ namespace QLThuVien.Controllers
             return View(nv);
         }
 
-        public ActionResult LuuHanhHome()
-        {
-            if(@Session["Username"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Index");
-            }
-        }
-
         public ActionResult Logout()
         {
             Session.Abandon();
-            return RedirectToAction("Index");
+            return View("Index");
         }
     }
 }

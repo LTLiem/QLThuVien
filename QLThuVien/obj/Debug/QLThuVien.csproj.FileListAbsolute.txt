@@ -55,3 +55,35 @@ C:\Users\LêThanh\Desktop\QLThuVien\QLThuVien\QLThuVien\bin\System.Web.WebPages.
 C:\Users\LêThanh\Desktop\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.dll
 C:\Users\LêThanh\Desktop\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.pdb
 C:\Users\LêThanh\Desktop\QLThuVien\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\QLThuVien.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\QLThuVien.pdb
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\EntityFramework.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Net.Http.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Net.Http.WebRequest.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Helpers.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Http.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\EntityFramework.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Net.Http.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Net.Http.WebRequest.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Http.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.WebPages.Razor.xml
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\obj\Debug\QLThuVien.dll
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\obj\Debug\QLThuVien.pdb
