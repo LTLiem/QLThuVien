@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "DocGiaHome";
+    Layout = "~/Views/QLDocGia/_QLDocGiaLayout.cshtml";
+}
+
+
+<!-- post -->
+<div class="post">
+    <h1><a href="single.html">Thêm Độc Giả</a></h1>
+    <!-- form thêm độc giả-->
+        <form role="form">
+            <div class="row">
+            <div class="col-md-5 col-md-offset-1">
+                <div class="form-group">
+                    <label>Họ</label>
+                    <input type="text" class="form-control" name="ho">
+                </div>
+                <div class="form-group">
+                    <label>Giới Tính</label>
+                    <div >
+                        <label class="radio-inline">
+                        <input type="radio" name="gioiTinh" id="gioiTinhNam" value="Nam"/>Nam
+                        </label>
+                        <label class="radio-inline">
+                        <input type="radio" name="gioiTinh" id="gioiTinhNu" value="Nu" />Nữ
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Địa Chỉ</label>
+                    <input type="text" class="form-control" name="diaChi">
+                </div>
+                <div class="form-group">
+                    <label>Mã số thẻ</label>
+                    <input type="text" class="form-control" name="maSoThe">
+                </div>
+                <div class="form-group">
+                    <label>Mã lớp</label>
+                    <input type="text" class="form-control" name="maLop">
+                </div>
+            </div>
+
+
+            <div class="col-md-5 col-md-offset-1">
+                <div class="form-group">
+                    <label>Tên</label>
+                    <input type="text" class="form-control" name="ten">
+                </div>
+                <div class="form-group">
+                    <label>Ngày sinh</label>
+                    <input type="text" class="form-control" name="ngaySinh">
+                </div>
+                <div class="form-group">
+                    <label>Điện Thoại</label>
+                    <input type="text" class="form-control" name="dienThoai">
+                </div>
+                <div class="form-group">
+                    <label>MSSV</label>
+                    <input type="text" class="form-control" name="MSSV">
+                </div>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    <!-- ENDS form-->
+</div>
+<!-- ENDS post -->

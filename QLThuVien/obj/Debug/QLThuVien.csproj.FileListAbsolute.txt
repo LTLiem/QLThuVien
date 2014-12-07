@@ -84,6 +84,6 @@ C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.Razor
 C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.WebPages.xml
 C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\bin\System.Web.WebPages.Razor.xml
-C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\obj\Debug\QLThuVien.dll
 C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\obj\Debug\QLThuVien.pdb
+C:\Users\Administrator\Desktop\Dang lam\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csprojResolveAssemblyReference.cache

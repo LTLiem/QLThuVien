@@ -1,5 +1,19 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutBody.cshtml";
+
+    if ("QLDG".Equals(Session["TenLoaiNV"]))
+    {
+        ViewBag.link = "/QLDocGia/ThemDocGia";
+    }
+    else if ("Luu hanh".Equals(Session["TenLoaiNV"]))
+    {
+        ViewBag.link = "/LuuHanh/LuuHanhHome";
+    }
+    else
+    {
+        ViewBag.link = "/Home/Login";
+    }
+    
 }
 
 			<!-- Menu -->
@@ -10,7 +24,7 @@
 					<!-- wrapper-menu -->
 					<div class="wrapper">
 						<!-- Navigation -->
-						<ul class="sf-menu" id="nav" name="nav">
+						<ul class="sf-menu" id="nav">
 							<li><a href="/home/index">Trang chủ</a></li>
                             <li><a href="#">Tin tức</a></li>
 							<li><a href="#">Giới thiệu<span class="subheader">Thông tin thư viện</span></a>
@@ -20,7 +34,8 @@
 								</ul>
 							</li>
 							<li><a href="#">OPAC<span class="subheader">Tra cứu OPAC</span></a></li>
-                            <li><a href="#">Đăng ký<span class="subheader">Lớp tập huấn</span></a></li>									
+                            <li><a href="#">Đăng ký<span class="subheader">Lớp tập huấn</span></a></li>	
+                            <li><a href="@ViewBag.link">Quản lý<span class="subheader">Dành cho quản lý thư viện</span></a></li>								
 						</ul>
 						<!-- Navigation -->
 					</div>

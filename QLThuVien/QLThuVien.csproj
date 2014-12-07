@@ -116,6 +116,7 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LuuHanhController.cs" />
+    <Compile Include="Controllers\QLDocGiaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -809,7 +810,13 @@
     <Content Include="Views\LuuHanh\LuuHanhHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\DocGia\DocGiaHome.cshtml" />
+    <Content Include="Views\QLDocGia\ThemDocGia.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QLDocGia\_QLDocGiaLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ReaderLogin.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

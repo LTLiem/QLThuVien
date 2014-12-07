@@ -15,6 +15,7 @@ namespace QLThuVien.Controllers
         public ActionResult Index()
         {
             return View();
+            //return RedirectToAction("ThemDocGia", "QLDocGia");
         }
 
         public ActionResult Login()
@@ -46,16 +47,18 @@ namespace QLThuVien.Controllers
 
                         MaLoaiNhanVien = Convert.ToInt32(v.LoaiNhanVien);
                         TenLoaiNhanVien = TE.loainhanvien.Where(i => i.id == MaLoaiNhanVien).FirstOrDefault().TenLoai;
-
+                        Session["TenLoaiNV"] = TenLoaiNhanVien;
                         switch (TenLoaiNhanVien)
                         {
                             case "Luu hanh":
                                 redirectView = "LuuHanhHome";
                                 redirectController = "LuuHanh";
+                                
                                 break;
                             case "QLDG":
-                                redirectView = "QLDocGiaHome";
+                                redirectView = "ThemDocGia";
                                 redirectController = "QLDocGia";
+                                
                                 break;
                         }
                         return RedirectToAction(redirectView,redirectController);
@@ -67,8 +70,16 @@ namespace QLThuVien.Controllers
             return View(nv);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ReaderLogin()
+        {
+            return View();
+        }
+
         public ActionResult Logout()
         {
+            Session.Clear();
             Session.Abandon();
             return View("Index");
         }

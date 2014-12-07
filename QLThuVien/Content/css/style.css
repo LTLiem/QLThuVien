@@ -35,7 +35,7 @@ body {
 }
 
 .wrapper{
-	width: 966px;
+	width: 1100px;
 	margin: 0px auto;
 	position: relative;
 }
@@ -724,7 +724,7 @@ h6{ font-size: 20px; }
 
 #posts{
 	float: left;
-	width: 624px;
+	width: 850px;
 }
 
 #posts .post{
@@ -1143,7 +1143,7 @@ h6{ font-size: 20px; }
 
 #sidebar{
 	float: left;
-	width: 282px;
+	width: 200px;
 	margin-left: 30px;
 }
 
@@ -1160,6 +1160,7 @@ h6{ font-size: 20px; }
 	line-height: 40px;
 	text-decoration: none;
 	border-bottom: 1px solid #d7d7d7;
+    padding-left:initial;
 }
 
 #sidebar ul>li:last-child{ border-bottom: none; }
