@@ -16,7 +16,7 @@ namespace QLThuVien.Models
     {
         public tacgia()
         {
-            this.sach = new HashSet<sach>();
+            this.saches = new HashSet<sach>();
         }
     
         public int maTacGia { get; set; }
@@ -25,6 +25,6 @@ namespace QLThuVien.Models
         public string thongTin { get; set; }
         public string gioiTinh { get; set; }
     
-        public virtual ICollection<sach> sach { get; set; }
+        public virtual ICollection<sach> saches { get; set; }
     }
 }

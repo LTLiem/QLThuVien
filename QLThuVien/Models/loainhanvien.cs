@@ -16,12 +16,12 @@ namespace QLThuVien.Models
     {
         public loainhanvien()
         {
-            this.nhanvien = new HashSet<nhanvien>();
+            this.nhanviens = new HashSet<nhanvien>();
         }
     
         public int id { get; set; }
         public string TenLoai { get; set; }
     
-        public virtual ICollection<nhanvien> nhanvien { get; set; }
+        public virtual ICollection<nhanvien> nhanviens { get; set; }
     }
 }

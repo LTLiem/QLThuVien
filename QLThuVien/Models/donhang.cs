@@ -16,7 +16,7 @@ namespace QLThuVien.Models
     {
         public donhang()
         {
-            this.ctdonhang = new HashSet<ctdonhang>();
+            this.ctdonhangs = new HashSet<ctdonhang>();
         }
     
         public int maDonHang { get; set; }
@@ -26,7 +26,7 @@ namespace QLThuVien.Models
         public Nullable<int> trangThai { get; set; }
         public Nullable<int> maNhaCungCap { get; set; }
     
-        public virtual ICollection<ctdonhang> ctdonhang { get; set; }
+        public virtual ICollection<ctdonhang> ctdonhangs { get; set; }
         public virtual nhacungcap nhacungcap { get; set; }
     }
 }

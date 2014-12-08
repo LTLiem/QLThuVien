@@ -606,7 +606,6 @@
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\DD_belatedPNG.js" />
     <Content Include="Content\js\easing.js" />
-    <Content Include="Content\js\form-validation-sc.js" />
     <Content Include="Content\js\form-validation.js" />
     <Content Include="Content\js\jquery-1.5.1.min.js" />
     <Content Include="Content\js\jquery-ui-1.8.13.custom.min.js" />
@@ -780,6 +779,24 @@
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LuuHanh\LuuHanhHome.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QLDocGia\ThemDocGia.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\QLDocGia\_QLDocGiaLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ReaderLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <EntityDeploy Include="Models\ThuVienModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ThuVienModel.Designer.cs</LastGenOutput>
@@ -799,24 +816,6 @@
       <DependentUpon>ThuVienModel.edmx</DependentUpon>
       <LastGenOutput>ThuVienModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Login.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\LuuHanh\LuuHanhHome.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\QLDocGia\ThemDocGia.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\QLDocGia\_QLDocGiaLayout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\ReaderLogin.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -14,8 +14,8 @@ namespace QLThuVien.Controllers
 
         public ActionResult Index()
         {
-            return View();
-            //return RedirectToAction("ThemDocGia", "QLDocGia");
+            //return View();
+            return RedirectToAction("ThemDocGia", "QLDocGia");
         }
 
         public ActionResult Login()
@@ -31,12 +31,12 @@ namespace QLThuVien.Controllers
             string TenLoaiNhanVien = "";
             string redirectView = "";
             string redirectController = "";
-
+            
             if (ModelState.IsValid)
             {
                 using (ThuVienEntities TE = new ThuVienEntities())
                 {
-                    var v = TE.nhanvien.Where(a => (a.tenDangNhap.Equals(nv.tenDangNhap)
+                    var v = TE.nhanviens.Where(a => (a.tenDangNhap.Equals(nv.tenDangNhap)
                                 && a.matKhau.Equals(nv.matKhau))).FirstOrDefault();  
    
                     if (v != null)
@@ -46,7 +46,7 @@ namespace QLThuVien.Controllers
                         Session["Password "] = v.matKhau.ToString();
 
                         MaLoaiNhanVien = Convert.ToInt32(v.LoaiNhanVien);
-                        TenLoaiNhanVien = TE.loainhanvien.Where(i => i.id == MaLoaiNhanVien).FirstOrDefault().TenLoai;
+                        TenLoaiNhanVien = TE.loainhanviens.Where(i => i.id == MaLoaiNhanVien).FirstOrDefault().TenLoai;
                         Session["TenLoaiNV"] = TenLoaiNhanVien;
                         switch (TenLoaiNhanVien)
                         {

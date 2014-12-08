@@ -16,12 +16,12 @@ namespace QLThuVien.Models
     {
         public chude()
         {
-            this.sach = new HashSet<sach>();
+            this.saches = new HashSet<sach>();
         }
     
         public int maChuDe { get; set; }
         public string tenChuDe { get; set; }
     
-        public virtual ICollection<sach> sach { get; set; }
+        public virtual ICollection<sach> saches { get; set; }
     }
 }

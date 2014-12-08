@@ -8,6 +8,21 @@
     <Property Name="tenAnPham" Type="varchar" MaxLength="50" />
     <Property Name="moTa" Type="varchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="chude">
+    <Key>
+      <PropertyRef Name="maChuDe" />
+    </Key>
+    <Property Name="maChuDe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenChuDe" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="chude_sach">
+    <Key>
+      <PropertyRef Name="maChuDe" />
+      <PropertyRef Name="maSach" />
+    </Key>
+    <Property Name="maChuDe" Type="int" Nullable="false" />
+    <Property Name="maSach" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="ctdonhang">
     <Key>
       <PropertyRef Name="maAnPham" />
@@ -27,21 +42,6 @@
     <Property Name="maSach" Type="int" Nullable="false" />
     <Property Name="tinhTrangSach" Type="int" />
     <Property Name="soTienPhat" Type="int" />
-  </EntityType>
-  <EntityType Name="chude">
-    <Key>
-      <PropertyRef Name="maChuDe" />
-    </Key>
-    <Property Name="maChuDe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="tenChuDe" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="chude_sach">
-    <Key>
-      <PropertyRef Name="maChuDe" />
-      <PropertyRef Name="maSach" />
-    </Key>
-    <Property Name="maChuDe" Type="int" Nullable="false" />
-    <Property Name="maSach" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="dausach">
     <Key>
@@ -81,7 +81,7 @@
     <Property Name="SDT" Type="char" MaxLength="11" />
     <Property Name="maTheThuVien" Type="int" />
     <Property Name="maNhomDocGia" Type="int" />
-    <Property Name="anhDaiDien" Type="longblob" />
+    <Property Name="anhDaidien" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="donhang">
     <Key>
@@ -196,6 +196,30 @@
     <Property Name="ghiChu" Type="char" MaxLength="20" />
     <Property Name="SLSachMuon" Type="int" />
   </EntityType>
+  <Association Name="chude_sach_ibfk_1">
+    <End Role="chude" Type="Self.chude" Multiplicity="1" />
+    <End Role="chude_sach" Type="Self.chude_sach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="chude">
+        <PropertyRef Name="maChuDe" />
+      </Principal>
+      <Dependent Role="chude_sach">
+        <PropertyRef Name="maChuDe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="chude_sach_ibfk_2">
+    <End Role="sach" Type="Self.sach" Multiplicity="1" />
+    <End Role="chude_sach" Type="Self.chude_sach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sach">
+        <PropertyRef Name="maSach" />
+      </Principal>
+      <Dependent Role="chude_sach">
+        <PropertyRef Name="maSach" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="ctdonhang_ibfk_1">
     <End Role="anpham" Type="Self.anpham" Multiplicity="1" />
     <End Role="ctdonhang" Type="Self.ctdonhang" Multiplicity="*" />
@@ -240,30 +264,6 @@
         <PropertyRef Name="maSach" />
       </Principal>
       <Dependent Role="ctphieumuonsach">
-        <PropertyRef Name="maSach" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="chude_sach_ibfk_1">
-    <End Role="chude" Type="Self.chude" Multiplicity="1" />
-    <End Role="chude_sach" Type="Self.chude_sach" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="chude">
-        <PropertyRef Name="maChuDe" />
-      </Principal>
-      <Dependent Role="chude_sach">
-        <PropertyRef Name="maChuDe" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="chude_sach_ibfk_2">
-    <End Role="sach" Type="Self.sach" Multiplicity="1" />
-    <End Role="chude_sach" Type="Self.chude_sach" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="sach">
-        <PropertyRef Name="maSach" />
-      </Principal>
-      <Dependent Role="chude_sach">
         <PropertyRef Name="maSach" />
       </Dependent>
     </ReferentialConstraint>
@@ -378,10 +378,10 @@
   </Association>
   <EntityContainer Name="ThuVienModelStoreContainer">
     <EntitySet Name="anpham" EntityType="Self.anpham" Schema="nhom3_khtn_library" store:Type="Tables" />
-    <EntitySet Name="ctdonhang" EntityType="Self.ctdonhang" Schema="nhom3_khtn_library" store:Type="Tables" />
-    <EntitySet Name="ctphieumuonsach" EntityType="Self.ctphieumuonsach" Schema="nhom3_khtn_library" store:Type="Tables" />
     <EntitySet Name="chude" EntityType="Self.chude" Schema="nhom3_khtn_library" store:Type="Tables" />
     <EntitySet Name="chude_sach" EntityType="Self.chude_sach" Schema="nhom3_khtn_library" store:Type="Tables" />
+    <EntitySet Name="ctdonhang" EntityType="Self.ctdonhang" Schema="nhom3_khtn_library" store:Type="Tables" />
+    <EntitySet Name="ctphieumuonsach" EntityType="Self.ctphieumuonsach" Schema="nhom3_khtn_library" store:Type="Tables" />
     <EntitySet Name="dausach" EntityType="Self.dausach" Schema="nhom3_khtn_library" store:Type="Tables" />
     <EntitySet Name="docgia" EntityType="Self.docgia" Schema="nhom3_khtn_library" store:Type="Tables" />
     <EntitySet Name="donhang" EntityType="Self.donhang" Schema="nhom3_khtn_library" store:Type="Tables" />
@@ -395,6 +395,14 @@
     <EntitySet Name="tacgia" EntityType="Self.tacgia" Schema="nhom3_khtn_library" store:Type="Tables" />
     <EntitySet Name="tacgia_sach" EntityType="Self.tacgia_sach" Schema="nhom3_khtn_library" store:Type="Tables" />
     <EntitySet Name="thethuvien" EntityType="Self.thethuvien" Schema="nhom3_khtn_library" store:Type="Tables" />
+    <AssociationSet Name="chude_sach_ibfk_1" Association="Self.chude_sach_ibfk_1">
+      <End Role="chude" EntitySet="chude" />
+      <End Role="chude_sach" EntitySet="chude_sach" />
+    </AssociationSet>
+    <AssociationSet Name="chude_sach_ibfk_2" Association="Self.chude_sach_ibfk_2">
+      <End Role="sach" EntitySet="sach" />
+      <End Role="chude_sach" EntitySet="chude_sach" />
+    </AssociationSet>
     <AssociationSet Name="ctdonhang_ibfk_1" Association="Self.ctdonhang_ibfk_1">
       <End Role="anpham" EntitySet="anpham" />
       <End Role="ctdonhang" EntitySet="ctdonhang" />
@@ -410,14 +418,6 @@
     <AssociationSet Name="ctphieumuonsach_ibfk_2" Association="Self.ctphieumuonsach_ibfk_2">
       <End Role="sach" EntitySet="sach" />
       <End Role="ctphieumuonsach" EntitySet="ctphieumuonsach" />
-    </AssociationSet>
-    <AssociationSet Name="chude_sach_ibfk_1" Association="Self.chude_sach_ibfk_1">
-      <End Role="chude" EntitySet="chude" />
-      <End Role="chude_sach" EntitySet="chude_sach" />
-    </AssociationSet>
-    <AssociationSet Name="chude_sach_ibfk_2" Association="Self.chude_sach_ibfk_2">
-      <End Role="sach" EntitySet="sach" />
-      <End Role="chude_sach" EntitySet="chude_sach" />
     </AssociationSet>
     <AssociationSet Name="dausach_ibfk_1" Association="Self.dausach_ibfk_1">
       <End Role="nhaxuatban" EntitySet="nhaxuatban" />

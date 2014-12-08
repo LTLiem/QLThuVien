@@ -1,4 +1,5 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(
+    function ($) {
 
 	// hide messages 
 	$("#error").hide();
@@ -52,7 +53,7 @@ jQuery(document).ready(function($) {
 						+ '&comments=' + comments
 						+ '&to=' + to
 						+ '&from=' + from
-						+ '&subject=' + subject;						         
+						+ '&subject=' + subject;
 		// ajax
 		$.ajax({
 			type:"POST",

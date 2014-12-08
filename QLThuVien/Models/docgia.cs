@@ -26,7 +26,7 @@ namespace QLThuVien.Models
         public string SDT { get; set; }
         public Nullable<int> maTheThuVien { get; set; }
         public Nullable<int> maNhomDocGia { get; set; }
-        public byte[] anhDaiDien { get; set; }
+        public string anhDaidien { get; set; }
     
         public virtual thethuvien thethuvien { get; set; }
         public virtual nhomdocgia nhomdocgia { get; set; }

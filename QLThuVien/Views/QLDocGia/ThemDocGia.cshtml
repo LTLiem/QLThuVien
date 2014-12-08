@@ -1,14 +1,114 @@
 ﻿@{
-    ViewBag.Title = "DocGiaHome";
+    
     Layout = "~/Views/QLDocGia/_QLDocGiaLayout.cshtml";
 }
+<script type="text/javascript" charset="UTF-8">
+function validatedate(inputText)  
+  {  
+  var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;  
+  // Match the date format through regular expression  
+  if(inputText.value.match(dateformat))  
+  {  
+  //Test which seperator is used '/' or '-'  
+  var opera1 = inputText.value.split('/');  
+  var opera2 = inputText.value.split('-');  
+  lopera1 = opera1.length;  
+  lopera2 = opera2.length;  
+  // Extract the string into month, date and year  
+  if (lopera1>1)  
+  {  
+  var pdate = inputText.value.split('/');  
+  }  
+  else if (lopera2>1)  
+  {  
+  var pdate = inputText.value.split('-');  
+  }  
+  var dd = parseInt(pdate[0]);  
+  var mm  = parseInt(pdate[1]);  
+  var yy = parseInt(pdate[2]);  
+  // Create list of days of a month [assume there is no leap year by default]  
+  var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];  
+  if (mm==1 || mm>2)  
+  {  
+  if (dd>ListofDays[mm-1])  
+  {  
+  alert('Không đúng định dạng!');  
+  return false;  
+  }  
+  }  
+  if (mm==2)  
+  {  
+  var lyear = false;  
+  if ( (!(yy % 4) && yy % 100) || !(yy % 400))   
+  {  
+  lyear = true;  
+  }  
+  if ((lyear==false) && (dd>=29))  
+  {  
+  alert('Không đúng định dạng!');
+  return false;  
+  }  
+  if ((lyear==true) && (dd>29))  
+  {  
+  alert('Không đúng định dạng!');
+  return false;  
+  }  
+  }  
+  }  
+  else  
+  {  
+  alert("Không đúng định dạng!!");
+  return false;
+  }  
+}
+
+function stringlength(inputtxt,  maxlength)  
+{   
+    var field = inputtxt.value;   
+    var mnlen = 0;  
+    var mxlen = maxlength;  
+      
+    if(field.length<mnlen || field.length > mxlen)  
+    {
+        return false;  
+    }
+    return true;
+}  
+
+function allnumeric(inputtxt) {
+    var numbers = /[0-9]+$/;
+    if (inputtxt.value.match(numbers)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+</script>
+<script>
+    function validateForm() {
+        
+    if (!stringlength(document.forms["form"]["ho"].value, 50)) {
+        alert("Nhập họ nhỏ hơn 50 chữ cái");
+    }
+    else {
+        alert("Nhập họ lớn hơn 50 chữ cái");
+    }
+    if (stringlength(document.forms["form"]["ten"].value, 20)) {
+        alert("Nhập tên nhỏ hơn 20 chữ cái");
+    }
+    
+}
+</script>
+
+
 
 
 <!-- post -->
 <div class="post">
     <h1><a href="single.html">Thêm Độc Giả</a></h1>
     <!-- form thêm độc giả-->
-        <form role="form">
+        <form name="form" role="form" action="/QLDocGia/createDocGia" method="post" onsubmit="validateForm()">
             <div class="row">
             <div class="col-md-5 col-md-offset-1">
                 <div class="form-group">
@@ -22,7 +122,7 @@
                         <input type="radio" name="gioiTinh" id="gioiTinhNam" value="Nam"/>Nam
                         </label>
                         <label class="radio-inline">
-                        <input type="radio" name="gioiTinh" id="gioiTinhNu" value="Nu" />Nữ
+                        <input type="radio" name="gioiTinh" id="gioiTinhNu" value="Nữ" />Nữ
                         </label>
                     </div>
                 </div>
@@ -35,8 +135,8 @@
                     <input type="text" class="form-control" name="maSoThe">
                 </div>
                 <div class="form-group">
-                    <label>Mã lớp</label>
-                    <input type="text" class="form-control" name="maLop">
+                    <label>CMND</label>
+                    <input type="text" class="form-control" name="CMND">
                 </div>
             </div>
 
@@ -48,7 +148,7 @@
                 </div>
                 <div class="form-group">
                     <label>Ngày sinh</label>
-                    <input type="text" class="form-control" name="ngaySinh">
+                    <input type="datetime" class="form-control" name="ngaySinh">
                 </div>
                 <div class="form-group">
                     <label>Điện Thoại</label>
@@ -60,7 +160,7 @@
                 </div>
             </div>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default" onclick="validateForm()">Submit</button>
         </form>
     <!-- ENDS form-->
 </div>

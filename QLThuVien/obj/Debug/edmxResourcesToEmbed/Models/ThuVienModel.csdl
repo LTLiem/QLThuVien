@@ -7,7 +7,15 @@
     <Property Name="maAnPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="tenAnPham" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="moTa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="ctdonhang" Relationship="Self.ctdonhang_ibfk_1" FromRole="anpham" ToRole="ctdonhang" />
+    <NavigationProperty Name="ctdonhangs" Relationship="Self.ctdonhang_ibfk_1" FromRole="anpham" ToRole="ctdonhang" />
+  </EntityType>
+  <EntityType Name="chude">
+    <Key>
+      <PropertyRef Name="maChuDe" />
+    </Key>
+    <Property Name="maChuDe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tenChuDe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="saches" Relationship="Self.chude_sach" FromRole="chude" ToRole="sach" />
   </EntityType>
   <EntityType Name="ctdonhang">
     <Key>
@@ -32,14 +40,6 @@
     <Property Name="soTienPhat" Type="Int32" />
     <NavigationProperty Name="phieumuonsach" Relationship="Self.ctphieumuonsach_ibfk_1" FromRole="ctphieumuonsach" ToRole="phieumuonsach" />
     <NavigationProperty Name="sach" Relationship="Self.ctphieumuonsach_ibfk_2" FromRole="ctphieumuonsach" ToRole="sach" />
-  </EntityType>
-  <EntityType Name="chude">
-    <Key>
-      <PropertyRef Name="maChuDe" />
-    </Key>
-    <Property Name="maChuDe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="tenChuDe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="sach" Relationship="Self.chude_sach" FromRole="chude" ToRole="sach" />
   </EntityType>
   <EntityType Name="dausach">
     <Key>
@@ -80,7 +80,7 @@
     <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
     <Property Name="maTheThuVien" Type="Int32" />
     <Property Name="maNhomDocGia" Type="Int32" />
-    <Property Name="anhDaiDien" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="anhDaidien" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="thethuvien" Relationship="Self.docgia_ibfk_1" FromRole="docgia" ToRole="thethuvien" />
     <NavigationProperty Name="nhomdocgia" Relationship="Self.docgia_ibfk_2" FromRole="docgia" ToRole="nhomdocgia" />
   </EntityType>
@@ -94,7 +94,7 @@
     <Property Name="ghiChu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="trangThai" Type="Int32" />
     <Property Name="maNhaCungCap" Type="Int32" />
-    <NavigationProperty Name="ctdonhang" Relationship="Self.ctdonhang_ibfk_2" FromRole="donhang" ToRole="ctdonhang" />
+    <NavigationProperty Name="ctdonhangs" Relationship="Self.ctdonhang_ibfk_2" FromRole="donhang" ToRole="ctdonhang" />
     <NavigationProperty Name="nhacungcap" Relationship="Self.donhang_ibfk_1" FromRole="donhang" ToRole="nhacungcap" />
   </EntityType>
   <EntityType Name="loainhanvien">
@@ -103,7 +103,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenLoai" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="nhanvien" Relationship="Self.nhanvien_ibfk_1" FromRole="loainhanvien" ToRole="nhanvien" />
+    <NavigationProperty Name="nhanviens" Relationship="Self.nhanvien_ibfk_1" FromRole="loainhanvien" ToRole="nhanvien" />
   </EntityType>
   <EntityType Name="nhacungcap">
     <Key>
@@ -111,7 +111,7 @@
     </Key>
     <Property Name="maNhaCungCap" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="tenNhaCungCap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="donhang" Relationship="Self.donhang_ibfk_1" FromRole="nhacungcap" ToRole="donhang" />
+    <NavigationProperty Name="donhangs" Relationship="Self.donhang_ibfk_1" FromRole="nhacungcap" ToRole="donhang" />
   </EntityType>
   <EntityType Name="nhanvien">
     <Key>
@@ -130,7 +130,7 @@
     <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
     <Property Name="LoaiNhanVien" Type="Int32" />
     <NavigationProperty Name="loainhanvien1" Relationship="Self.nhanvien_ibfk_1" FromRole="nhanvien" ToRole="loainhanvien" />
-    <NavigationProperty Name="phieumuonsach" Relationship="Self.phieumuonsach_ibfk_1" FromRole="nhanvien" ToRole="phieumuonsach" />
+    <NavigationProperty Name="phieumuonsaches" Relationship="Self.phieumuonsach_ibfk_1" FromRole="nhanvien" ToRole="phieumuonsach" />
   </EntityType>
   <EntityType Name="nhaxuatban">
     <Key>
@@ -139,7 +139,7 @@
     <Property Name="maNhaXuatBan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="tenNXB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="diaDiem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="dausach" Relationship="Self.dausach_ibfk_1" FromRole="nhaxuatban" ToRole="dausach" />
+    <NavigationProperty Name="dausaches" Relationship="Self.dausach_ibfk_1" FromRole="nhaxuatban" ToRole="dausach" />
   </EntityType>
   <EntityType Name="nhomdocgia">
     <Key>
@@ -152,7 +152,7 @@
     <Property Name="thoiHanGiaHan" Type="Int32" />
     <Property Name="thoiGianMuonQuaHan" Type="Int32" />
     <Property Name="tienPhatMuonQuaHan" Type="Int32" />
-    <NavigationProperty Name="docgia" Relationship="Self.docgia_ibfk_2" FromRole="nhomdocgia" ToRole="docgia" />
+    <NavigationProperty Name="docgias" Relationship="Self.docgia_ibfk_2" FromRole="nhomdocgia" ToRole="docgia" />
   </EntityType>
   <EntityType Name="phieumuonsach">
     <Key>
@@ -165,7 +165,7 @@
     <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="maNhanVien" Type="Int32" />
     <Property Name="maTheThuVien" Type="Int32" />
-    <NavigationProperty Name="ctphieumuonsach" Relationship="Self.ctphieumuonsach_ibfk_1" FromRole="phieumuonsach" ToRole="ctphieumuonsach" />
+    <NavigationProperty Name="ctphieumuonsaches" Relationship="Self.ctphieumuonsach_ibfk_1" FromRole="phieumuonsach" ToRole="ctphieumuonsach" />
     <NavigationProperty Name="nhanvien" Relationship="Self.phieumuonsach_ibfk_1" FromRole="phieumuonsach" ToRole="nhanvien" />
     <NavigationProperty Name="thethuvien" Relationship="Self.phieumuonsach_ibfk_2" FromRole="phieumuonsach" ToRole="thethuvien" />
   </EntityType>
@@ -178,9 +178,9 @@
     <Property Name="tinhTrangSach" Type="Int32" />
     <Property Name="soTienPhat" Type="Int32" />
     <Property Name="maDauSach" Type="Int32" />
-    <NavigationProperty Name="ctphieumuonsach" Relationship="Self.ctphieumuonsach_ibfk_2" FromRole="sach" ToRole="ctphieumuonsach" />
-    <NavigationProperty Name="chude" Relationship="Self.chude_sach" FromRole="sach" ToRole="chude" />
-    <NavigationProperty Name="tacgia" Relationship="Self.tacgia_sach" FromRole="sach" ToRole="tacgia" />
+    <NavigationProperty Name="ctphieumuonsaches" Relationship="Self.ctphieumuonsach_ibfk_2" FromRole="sach" ToRole="ctphieumuonsach" />
+    <NavigationProperty Name="chudes" Relationship="Self.chude_sach" FromRole="sach" ToRole="chude" />
+    <NavigationProperty Name="tacgias" Relationship="Self.tacgia_sach" FromRole="sach" ToRole="tacgia" />
   </EntityType>
   <EntityType Name="tacgia">
     <Key>
@@ -191,7 +191,7 @@
     <Property Name="tenDayDu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="thongTin" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="gioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="sach" Relationship="Self.tacgia_sach" FromRole="tacgia" ToRole="sach" />
+    <NavigationProperty Name="saches" Relationship="Self.tacgia_sach" FromRole="tacgia" ToRole="sach" />
   </EntityType>
   <EntityType Name="thethuvien">
     <Key>
@@ -203,8 +203,8 @@
     <Property Name="trangThai" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="ghiChu" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="SLSachMuon" Type="Int32" />
-    <NavigationProperty Name="docgia" Relationship="Self.docgia_ibfk_1" FromRole="thethuvien" ToRole="docgia" />
-    <NavigationProperty Name="phieumuonsach" Relationship="Self.phieumuonsach_ibfk_2" FromRole="thethuvien" ToRole="phieumuonsach" />
+    <NavigationProperty Name="docgias" Relationship="Self.docgia_ibfk_1" FromRole="thethuvien" ToRole="docgia" />
+    <NavigationProperty Name="phieumuonsaches" Relationship="Self.phieumuonsach_ibfk_2" FromRole="thethuvien" ToRole="phieumuonsach" />
   </EntityType>
   <Association Name="ctdonhang_ibfk_1">
     <End Role="anpham" Type="Self.anpham" Multiplicity="1" />
@@ -347,73 +347,73 @@
     <End Role="sach" Type="Self.sach" Multiplicity="*" />
   </Association>
   <EntityContainer Name="ThuVienEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="anpham" EntityType="Self.anpham" />
-    <EntitySet Name="ctdonhang" EntityType="Self.ctdonhang" />
-    <EntitySet Name="ctphieumuonsach" EntityType="Self.ctphieumuonsach" />
-    <EntitySet Name="chude" EntityType="Self.chude" />
-    <EntitySet Name="dausach" EntityType="Self.dausach" />
-    <EntitySet Name="docgia" EntityType="Self.docgia" />
-    <EntitySet Name="donhang" EntityType="Self.donhang" />
-    <EntitySet Name="loainhanvien" EntityType="Self.loainhanvien" />
-    <EntitySet Name="nhacungcap" EntityType="Self.nhacungcap" />
-    <EntitySet Name="nhanvien" EntityType="Self.nhanvien" />
-    <EntitySet Name="nhaxuatban" EntityType="Self.nhaxuatban" />
-    <EntitySet Name="nhomdocgia" EntityType="Self.nhomdocgia" />
-    <EntitySet Name="phieumuonsach" EntityType="Self.phieumuonsach" />
-    <EntitySet Name="sach" EntityType="Self.sach" />
-    <EntitySet Name="tacgia" EntityType="Self.tacgia" />
-    <EntitySet Name="thethuvien" EntityType="Self.thethuvien" />
+    <EntitySet Name="anphams" EntityType="Self.anpham" />
+    <EntitySet Name="chudes" EntityType="Self.chude" />
+    <EntitySet Name="ctdonhangs" EntityType="Self.ctdonhang" />
+    <EntitySet Name="ctphieumuonsaches" EntityType="Self.ctphieumuonsach" />
+    <EntitySet Name="dausaches" EntityType="Self.dausach" />
+    <EntitySet Name="docgias" EntityType="Self.docgia" />
+    <EntitySet Name="donhangs" EntityType="Self.donhang" />
+    <EntitySet Name="loainhanviens" EntityType="Self.loainhanvien" />
+    <EntitySet Name="nhacungcaps" EntityType="Self.nhacungcap" />
+    <EntitySet Name="nhanviens" EntityType="Self.nhanvien" />
+    <EntitySet Name="nhaxuatbans" EntityType="Self.nhaxuatban" />
+    <EntitySet Name="nhomdocgias" EntityType="Self.nhomdocgia" />
+    <EntitySet Name="phieumuonsaches" EntityType="Self.phieumuonsach" />
+    <EntitySet Name="saches" EntityType="Self.sach" />
+    <EntitySet Name="tacgias" EntityType="Self.tacgia" />
+    <EntitySet Name="thethuviens" EntityType="Self.thethuvien" />
     <AssociationSet Name="ctdonhang_ibfk_1" Association="Self.ctdonhang_ibfk_1">
-      <End Role="anpham" EntitySet="anpham" />
-      <End Role="ctdonhang" EntitySet="ctdonhang" />
+      <End Role="anpham" EntitySet="anphams" />
+      <End Role="ctdonhang" EntitySet="ctdonhangs" />
     </AssociationSet>
     <AssociationSet Name="ctdonhang_ibfk_2" Association="Self.ctdonhang_ibfk_2">
-      <End Role="donhang" EntitySet="donhang" />
-      <End Role="ctdonhang" EntitySet="ctdonhang" />
+      <End Role="donhang" EntitySet="donhangs" />
+      <End Role="ctdonhang" EntitySet="ctdonhangs" />
     </AssociationSet>
     <AssociationSet Name="ctphieumuonsach_ibfk_1" Association="Self.ctphieumuonsach_ibfk_1">
-      <End Role="phieumuonsach" EntitySet="phieumuonsach" />
-      <End Role="ctphieumuonsach" EntitySet="ctphieumuonsach" />
+      <End Role="phieumuonsach" EntitySet="phieumuonsaches" />
+      <End Role="ctphieumuonsach" EntitySet="ctphieumuonsaches" />
     </AssociationSet>
     <AssociationSet Name="ctphieumuonsach_ibfk_2" Association="Self.ctphieumuonsach_ibfk_2">
-      <End Role="sach" EntitySet="sach" />
-      <End Role="ctphieumuonsach" EntitySet="ctphieumuonsach" />
+      <End Role="sach" EntitySet="saches" />
+      <End Role="ctphieumuonsach" EntitySet="ctphieumuonsaches" />
     </AssociationSet>
     <AssociationSet Name="dausach_ibfk_1" Association="Self.dausach_ibfk_1">
-      <End Role="nhaxuatban" EntitySet="nhaxuatban" />
-      <End Role="dausach" EntitySet="dausach" />
+      <End Role="nhaxuatban" EntitySet="nhaxuatbans" />
+      <End Role="dausach" EntitySet="dausaches" />
     </AssociationSet>
     <AssociationSet Name="docgia_ibfk_1" Association="Self.docgia_ibfk_1">
-      <End Role="thethuvien" EntitySet="thethuvien" />
-      <End Role="docgia" EntitySet="docgia" />
+      <End Role="thethuvien" EntitySet="thethuviens" />
+      <End Role="docgia" EntitySet="docgias" />
     </AssociationSet>
     <AssociationSet Name="docgia_ibfk_2" Association="Self.docgia_ibfk_2">
-      <End Role="nhomdocgia" EntitySet="nhomdocgia" />
-      <End Role="docgia" EntitySet="docgia" />
+      <End Role="nhomdocgia" EntitySet="nhomdocgias" />
+      <End Role="docgia" EntitySet="docgias" />
     </AssociationSet>
     <AssociationSet Name="donhang_ibfk_1" Association="Self.donhang_ibfk_1">
-      <End Role="nhacungcap" EntitySet="nhacungcap" />
-      <End Role="donhang" EntitySet="donhang" />
+      <End Role="nhacungcap" EntitySet="nhacungcaps" />
+      <End Role="donhang" EntitySet="donhangs" />
     </AssociationSet>
     <AssociationSet Name="nhanvien_ibfk_1" Association="Self.nhanvien_ibfk_1">
-      <End Role="loainhanvien" EntitySet="loainhanvien" />
-      <End Role="nhanvien" EntitySet="nhanvien" />
+      <End Role="loainhanvien" EntitySet="loainhanviens" />
+      <End Role="nhanvien" EntitySet="nhanviens" />
     </AssociationSet>
     <AssociationSet Name="phieumuonsach_ibfk_1" Association="Self.phieumuonsach_ibfk_1">
-      <End Role="nhanvien" EntitySet="nhanvien" />
-      <End Role="phieumuonsach" EntitySet="phieumuonsach" />
+      <End Role="nhanvien" EntitySet="nhanviens" />
+      <End Role="phieumuonsach" EntitySet="phieumuonsaches" />
     </AssociationSet>
     <AssociationSet Name="phieumuonsach_ibfk_2" Association="Self.phieumuonsach_ibfk_2">
-      <End Role="thethuvien" EntitySet="thethuvien" />
-      <End Role="phieumuonsach" EntitySet="phieumuonsach" />
+      <End Role="thethuvien" EntitySet="thethuviens" />
+      <End Role="phieumuonsach" EntitySet="phieumuonsaches" />
     </AssociationSet>
     <AssociationSet Name="chude_sach" Association="Self.chude_sach">
-      <End Role="chude" EntitySet="chude" />
-      <End Role="sach" EntitySet="sach" />
+      <End Role="chude" EntitySet="chudes" />
+      <End Role="sach" EntitySet="saches" />
     </AssociationSet>
     <AssociationSet Name="tacgia_sach" Association="Self.tacgia_sach">
-      <End Role="tacgia" EntitySet="tacgia" />
-      <End Role="sach" EntitySet="sach" />
+      <End Role="tacgia" EntitySet="tacgias" />
+      <End Role="sach" EntitySet="saches" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

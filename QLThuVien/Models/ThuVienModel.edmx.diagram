@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="899f928548414dca8d7a491435f92145" Name="Diagram1">
+      <Diagram DiagramId="f3184d464a60450eba38c7d00826f8ed" Name="Diagram1">
         <EntityTypeShape EntityType="ThuVienModel.anpham" Width="1.5" PointX="5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVienModel.chude" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.ctdonhang" Width="1.5" PointX="7.25" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.ctphieumuonsach" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThuVienModel.chude" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.dausach" Width="1.5" PointX="10" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThuVienModel.docgia" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVienModel.docgia" Width="1.5" PointX="6.375" PointY="14.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.donhang" Width="1.5" PointX="5" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.loainhanvien" Width="1.5" PointX="1.5" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.nhacungcap" Width="1.5" PointX="2.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.nhanvien" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.nhaxuatban" Width="1.5" PointX="7.75" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThuVienModel.nhomdocgia" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVienModel.nhomdocgia" Width="1.5" PointX="8.625" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.phieumuonsach" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.sach" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ThuVienModel.tacgia" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThuVienModel.thethuvien" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThuVienModel.thethuvien" Width="1.5" PointX="4.125" PointY="14.375" IsExpanded="true" />
         <AssociationConnector Association="ThuVienModel.ctdonhang_ibfk_1" ManuallyRouted="false" />
         <AssociationConnector Association="ThuVienModel.ctdonhang_ibfk_2" ManuallyRouted="false" />
         <AssociationConnector Association="ThuVienModel.ctphieumuonsach_ibfk_1" ManuallyRouted="false" />

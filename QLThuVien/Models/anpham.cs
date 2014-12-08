@@ -16,13 +16,13 @@ namespace QLThuVien.Models
     {
         public anpham()
         {
-            this.ctdonhang = new HashSet<ctdonhang>();
+            this.ctdonhangs = new HashSet<ctdonhang>();
         }
     
         public int maAnPham { get; set; }
         public string tenAnPham { get; set; }
         public string moTa { get; set; }
     
-        public virtual ICollection<ctdonhang> ctdonhang { get; set; }
+        public virtual ICollection<ctdonhang> ctdonhangs { get; set; }
     }
 }

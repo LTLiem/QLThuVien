@@ -16,8 +16,8 @@ namespace QLThuVien.Models
     {
         public thethuvien()
         {
-            this.docgia = new HashSet<docgia>();
-            this.phieumuonsach = new HashSet<phieumuonsach>();
+            this.docgias = new HashSet<docgia>();
+            this.phieumuonsaches = new HashSet<phieumuonsach>();
         }
     
         public int maTheThuVien { get; set; }
@@ -27,7 +27,7 @@ namespace QLThuVien.Models
         public string ghiChu { get; set; }
         public Nullable<int> SLSachMuon { get; set; }
     
-        public virtual ICollection<docgia> docgia { get; set; }
-        public virtual ICollection<phieumuonsach> phieumuonsach { get; set; }
+        public virtual ICollection<docgia> docgias { get; set; }
+        public virtual ICollection<phieumuonsach> phieumuonsaches { get; set; }
     }
 }

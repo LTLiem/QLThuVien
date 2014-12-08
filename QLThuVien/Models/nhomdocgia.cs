@@ -16,7 +16,7 @@ namespace QLThuVien.Models
     {
         public nhomdocgia()
         {
-            this.docgia = new HashSet<docgia>();
+            this.docgias = new HashSet<docgia>();
         }
     
         public int maNhomDocGia { get; set; }
@@ -27,6 +27,6 @@ namespace QLThuVien.Models
         public Nullable<int> thoiGianMuonQuaHan { get; set; }
         public Nullable<int> tienPhatMuonQuaHan { get; set; }
     
-        public virtual ICollection<docgia> docgia { get; set; }
+        public virtual ICollection<docgia> docgias { get; set; }
     }
 }

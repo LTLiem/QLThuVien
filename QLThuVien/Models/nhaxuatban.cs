@@ -16,13 +16,13 @@ namespace QLThuVien.Models
     {
         public nhaxuatban()
         {
-            this.dausach = new HashSet<dausach>();
+            this.dausaches = new HashSet<dausach>();
         }
     
         public int maNhaXuatBan { get; set; }
         public string tenNXB { get; set; }
         public string diaDiem { get; set; }
     
-        public virtual ICollection<dausach> dausach { get; set; }
+        public virtual ICollection<dausach> dausaches { get; set; }
     }
 }

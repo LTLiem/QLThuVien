@@ -16,7 +16,7 @@ namespace QLThuVien.Models
     {
         public phieumuonsach()
         {
-            this.ctphieumuonsach = new HashSet<ctphieumuonsach>();
+            this.ctphieumuonsaches = new HashSet<ctphieumuonsach>();
         }
     
         public int maPhieuMuonSach { get; set; }
@@ -27,7 +27,7 @@ namespace QLThuVien.Models
         public Nullable<int> maNhanVien { get; set; }
         public Nullable<int> maTheThuVien { get; set; }
     
-        public virtual ICollection<ctphieumuonsach> ctphieumuonsach { get; set; }
+        public virtual ICollection<ctphieumuonsach> ctphieumuonsaches { get; set; }
         public virtual nhanvien nhanvien { get; set; }
         public virtual thethuvien thethuvien { get; set; }
     }

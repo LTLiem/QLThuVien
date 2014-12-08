@@ -16,12 +16,12 @@ namespace QLThuVien.Models
     {
         public nhacungcap()
         {
-            this.donhang = new HashSet<donhang>();
+            this.donhangs = new HashSet<donhang>();
         }
     
         public int maNhaCungCap { get; set; }
         public string tenNhaCungCap { get; set; }
     
-        public virtual ICollection<donhang> donhang { get; set; }
+        public virtual ICollection<donhang> donhangs { get; set; }
     }
 }

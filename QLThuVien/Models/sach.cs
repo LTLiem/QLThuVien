@@ -16,9 +16,9 @@ namespace QLThuVien.Models
     {
         public sach()
         {
-            this.ctphieumuonsach = new HashSet<ctphieumuonsach>();
-            this.chude = new HashSet<chude>();
-            this.tacgia = new HashSet<tacgia>();
+            this.ctphieumuonsaches = new HashSet<ctphieumuonsach>();
+            this.chudes = new HashSet<chude>();
+            this.tacgias = new HashSet<tacgia>();
         }
     
         public int maSach { get; set; }
@@ -27,8 +27,8 @@ namespace QLThuVien.Models
         public Nullable<int> soTienPhat { get; set; }
         public Nullable<int> maDauSach { get; set; }
     
-        public virtual ICollection<ctphieumuonsach> ctphieumuonsach { get; set; }
-        public virtual ICollection<chude> chude { get; set; }
-        public virtual ICollection<tacgia> tacgia { get; set; }
+        public virtual ICollection<ctphieumuonsach> ctphieumuonsaches { get; set; }
+        public virtual ICollection<chude> chudes { get; set; }
+        public virtual ICollection<tacgia> tacgias { get; set; }
     }
 }

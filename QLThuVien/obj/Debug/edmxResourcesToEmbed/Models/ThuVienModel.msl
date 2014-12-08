@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ThuVienModelStoreContainer" CdmEntityContainer="ThuVienEntities">
-    <EntitySetMapping Name="anpham">
+    <EntitySetMapping Name="anphams">
       <EntityTypeMapping TypeName="ThuVienModel.anpham">
         <MappingFragment StoreEntitySet="anpham">
           <ScalarProperty Name="maAnPham" ColumnName="maAnPham" />
@@ -10,7 +10,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ctdonhang">
+    <EntitySetMapping Name="chudes">
+      <EntityTypeMapping TypeName="ThuVienModel.chude">
+        <MappingFragment StoreEntitySet="chude">
+          <ScalarProperty Name="maChuDe" ColumnName="maChuDe" />
+          <ScalarProperty Name="tenChuDe" ColumnName="tenChuDe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ctdonhangs">
       <EntityTypeMapping TypeName="ThuVienModel.ctdonhang">
         <MappingFragment StoreEntitySet="ctdonhang">
           <ScalarProperty Name="maAnPham" ColumnName="maAnPham" />
@@ -20,7 +28,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ctphieumuonsach">
+    <EntitySetMapping Name="ctphieumuonsaches">
       <EntityTypeMapping TypeName="ThuVienModel.ctphieumuonsach">
         <MappingFragment StoreEntitySet="ctphieumuonsach">
           <ScalarProperty Name="maPhieuMuonSach" ColumnName="maPhieuMuonSach" />
@@ -30,15 +38,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="chude">
-      <EntityTypeMapping TypeName="ThuVienModel.chude">
-        <MappingFragment StoreEntitySet="chude">
-          <ScalarProperty Name="maChuDe" ColumnName="maChuDe" />
-          <ScalarProperty Name="tenChuDe" ColumnName="tenChuDe" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="dausach">
+    <EntitySetMapping Name="dausaches">
       <EntityTypeMapping TypeName="ThuVienModel.dausach">
         <MappingFragment StoreEntitySet="dausach">
           <ScalarProperty Name="maDauSach" ColumnName="maDauSach" />
@@ -61,7 +61,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="docgia">
+    <EntitySetMapping Name="docgias">
       <EntityTypeMapping TypeName="ThuVienModel.docgia">
         <MappingFragment StoreEntitySet="docgia">
           <ScalarProperty Name="maDocGia" ColumnName="maDocGia" />
@@ -76,11 +76,11 @@
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="maTheThuVien" ColumnName="maTheThuVien" />
           <ScalarProperty Name="maNhomDocGia" ColumnName="maNhomDocGia" />
-          <ScalarProperty Name="anhDaiDien" ColumnName="anhDaiDien" />
+          <ScalarProperty Name="anhDaidien" ColumnName="anhDaidien" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="donhang">
+    <EntitySetMapping Name="donhangs">
       <EntityTypeMapping TypeName="ThuVienModel.donhang">
         <MappingFragment StoreEntitySet="donhang">
           <ScalarProperty Name="maDonHang" ColumnName="maDonHang" />
@@ -92,7 +92,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="loainhanvien">
+    <EntitySetMapping Name="loainhanviens">
       <EntityTypeMapping TypeName="ThuVienModel.loainhanvien">
         <MappingFragment StoreEntitySet="loainhanvien">
           <ScalarProperty Name="id" ColumnName="id" />
@@ -100,7 +100,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="nhacungcap">
+    <EntitySetMapping Name="nhacungcaps">
       <EntityTypeMapping TypeName="ThuVienModel.nhacungcap">
         <MappingFragment StoreEntitySet="nhacungcap">
           <ScalarProperty Name="maNhaCungCap" ColumnName="maNhaCungCap" />
@@ -108,7 +108,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="nhanvien">
+    <EntitySetMapping Name="nhanviens">
       <EntityTypeMapping TypeName="ThuVienModel.nhanvien">
         <MappingFragment StoreEntitySet="nhanvien">
           <ScalarProperty Name="maNhanVien" ColumnName="maNhanVien" />
@@ -126,7 +126,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="nhaxuatban">
+    <EntitySetMapping Name="nhaxuatbans">
       <EntityTypeMapping TypeName="ThuVienModel.nhaxuatban">
         <MappingFragment StoreEntitySet="nhaxuatban">
           <ScalarProperty Name="maNhaXuatBan" ColumnName="maNhaXuatBan" />
@@ -135,7 +135,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="nhomdocgia">
+    <EntitySetMapping Name="nhomdocgias">
       <EntityTypeMapping TypeName="ThuVienModel.nhomdocgia">
         <MappingFragment StoreEntitySet="nhomdocgia">
           <ScalarProperty Name="maNhomDocGia" ColumnName="maNhomDocGia" />
@@ -148,7 +148,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="phieumuonsach">
+    <EntitySetMapping Name="phieumuonsaches">
       <EntityTypeMapping TypeName="ThuVienModel.phieumuonsach">
         <MappingFragment StoreEntitySet="phieumuonsach">
           <ScalarProperty Name="maPhieuMuonSach" ColumnName="maPhieuMuonSach" />
@@ -161,7 +161,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sach">
+    <EntitySetMapping Name="saches">
       <EntityTypeMapping TypeName="ThuVienModel.sach">
         <MappingFragment StoreEntitySet="sach">
           <ScalarProperty Name="maSach" ColumnName="maSach" />
@@ -172,7 +172,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tacgia">
+    <EntitySetMapping Name="tacgias">
       <EntityTypeMapping TypeName="ThuVienModel.tacgia">
         <MappingFragment StoreEntitySet="tacgia">
           <ScalarProperty Name="maTacGia" ColumnName="maTacGia" />
@@ -183,7 +183,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="thethuvien">
+    <EntitySetMapping Name="thethuviens">
       <EntityTypeMapping TypeName="ThuVienModel.thethuvien">
         <MappingFragment StoreEntitySet="thethuvien">
           <ScalarProperty Name="maTheThuVien" ColumnName="maTheThuVien" />

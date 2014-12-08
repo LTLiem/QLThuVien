@@ -25,21 +25,21 @@ namespace QLThuVien.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<anpham> anpham { get; set; }
-        public DbSet<ctdonhang> ctdonhang { get; set; }
-        public DbSet<ctphieumuonsach> ctphieumuonsach { get; set; }
-        public DbSet<chude> chude { get; set; }
-        public DbSet<dausach> dausach { get; set; }
-        public DbSet<docgia> docgia { get; set; }
-        public DbSet<donhang> donhang { get; set; }
-        public DbSet<loainhanvien> loainhanvien { get; set; }
-        public DbSet<nhacungcap> nhacungcap { get; set; }
-        public DbSet<nhanvien> nhanvien { get; set; }
-        public DbSet<nhaxuatban> nhaxuatban { get; set; }
-        public DbSet<nhomdocgia> nhomdocgia { get; set; }
-        public DbSet<phieumuonsach> phieumuonsach { get; set; }
-        public DbSet<sach> sach { get; set; }
-        public DbSet<tacgia> tacgia { get; set; }
-        public DbSet<thethuvien> thethuvien { get; set; }
+        public DbSet<anpham> anphams { get; set; }
+        public DbSet<chude> chudes { get; set; }
+        public DbSet<ctdonhang> ctdonhangs { get; set; }
+        public DbSet<ctphieumuonsach> ctphieumuonsaches { get; set; }
+        public DbSet<dausach> dausaches { get; set; }
+        public DbSet<docgia> docgias { get; set; }
+        public DbSet<donhang> donhangs { get; set; }
+        public DbSet<loainhanvien> loainhanviens { get; set; }
+        public DbSet<nhacungcap> nhacungcaps { get; set; }
+        public DbSet<nhanvien> nhanviens { get; set; }
+        public DbSet<nhaxuatban> nhaxuatbans { get; set; }
+        public DbSet<nhomdocgia> nhomdocgias { get; set; }
+        public DbSet<phieumuonsach> phieumuonsaches { get; set; }
+        public DbSet<sach> saches { get; set; }
+        public DbSet<tacgia> tacgias { get; set; }
+        public DbSet<thethuvien> thethuviens { get; set; }
     }
 }
